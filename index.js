@@ -213,4 +213,4 @@ var sakib = {
 printName();
 
 
-উপরোক্ত তিনটি রুল কাজ না করলে window binding কাজ করবে 
+উপরোক্ত তিনটি রুল কাজ না করলে window binding কাজ করবে ।
