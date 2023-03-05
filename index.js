@@ -121,7 +121,7 @@ var sakib = {
 };
 
 
-printName().call(sakib)
+printName.call(sakib)
 
 এখানে আমরা চাচ্ছি printName() ফাংশন দিয়ে অবজেক্টে কল করব । যেহেতু printName() ফাংশনটা গ্লোবাল  scope আছে , টাই আমরা this দিয়ে এক্সেস করতে পারব না ।
 
@@ -150,7 +150,7 @@ var sakib = {
 };
 
 
-printName().call(sakib, v1, v2, v3);
+printName.call(sakib, v1, v2, v3);
 
 
 case: 3 দ্বিতীয়ও প্যারামিটারে অ্যাঁরে পাস করা এবং apply() মেথড 
@@ -169,7 +169,8 @@ var sakib = {
 
 var v = ["Handsome", " Al-rounder", " Best player "]
 
-printName().apply(sakib, v)
+printName.apply(sakib, v)
+
 
 
 case: 4 bind() মেথড
@@ -180,13 +181,36 @@ case: 4 bind() মেথড
  
 
 
-var newFunc = printName.bind(sakib, v1, v2, var)
+var newFunc = printName.bind(sakib, v1, v2, v3)
 
 
 ৩।  new binding : 
+
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+    console.log(`${this.name} is ${this.age} years old`);
+
+}
+
+var sakib = new Person ("sakib" , 35);
 
 
 
 
 
 ৪। window binding :
+
+var printName = function (){
+    console.log(this.name);
+}
+
+var sakib = {
+    name: "sakib", 
+    age : 35
+};
+
+printName();
+
+
+উপরোক্ত তিনটি রুল কাজ না করলে window binding কাজ করবে 
